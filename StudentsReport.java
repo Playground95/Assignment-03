@@ -104,27 +104,37 @@ public class StudentsReport {
             else if(avgMarks >= 55) overallStatus = "Pass";
             else overallStatus = "Fail";
 
-            if(marks1 >= 75) statusSub1 = "Distinguished Pass";
-            else if(marks1 >= 65) statusSub1 = "Credit Pass";
-            else if(marks1 >= 55) statusSub1 = "Pass";
-            else statusSub1 = "Fail";
+            if(marks1 >= 75) statusSub1 = "\033[32;1mDistinguished Pass\033[0m";
+            else if(marks1 >= 65) statusSub1 = "\033[34;1mCredit Pass\033[0m";
+            else if(marks1 >= 55) statusSub1 = "\033[33;1mPass\033[0m";
+            else statusSub1 = "\033[31;1mFail\033[0m";
 
-            if(marks2 >= 75) statusSub2 = "Distinguished Pass";
-            else if(marks2 >= 65) statusSub2 = "Credit Pass";
-            else if(marks2 >= 55) statusSub2 = "Pass";
-            else statusSub2 = "Fail";
+            if(marks2 >= 75) statusSub2 = "\033[32;1mDistinguished Pass\033[0m";
+            else if(marks2 >= 65) statusSub2 = "\033[34;1mCredit Pass\033[0m";
+            else if(marks2 >= 55) statusSub2 = "\033[33;1mPass\033[0m";
+            else statusSub2 = "\033[31;1mFail\033[0m";
 
-            if(marks3 >= 75) statusSub3 = "Distinguished Pass";
-            else if(marks3 >= 65) statusSub3 = "Credit Pass";
-            else if(marks3 >= 55) statusSub3 = "Pass";
-            else statusSub3 = "Fail";
+            if(marks3 >= 75) statusSub3 = "\033[32;1mDistinguished Pass\033[0m";
+            else if(marks3 >= 65) statusSub3 = "\033[34;1mCredit Pass\033[0m";
+            else if(marks3 >= 55) statusSub3 = "\033[33;1mPass\033[0m";
+            else statusSub3 = "\033[31;1mFail\033[0m";
                     
                                                     
             System.out.println("+" + "-".repeat(15) + "+" + "-".repeat(15) + "+" + "-".repeat(15) + "+");
             System.out.printf("|%-15s%3$s34;1m%-32s%3$s0m|\n","Name: ", name.toUpperCase(), color);
             System.out.printf("|%-15s%-53s|\n","Age: ", "\033[31;1m"+age+"\033[0m" +" \033[34;myears old\033[0m"); 
             System.out.printf("|%-15s%3$s31;1m%-32s%3$s0m|\n", "Status:", overallStatus, color); 
-            System.out.printf("|%-23s%-24s|\n", "Total: " + totalMarks, "Avg: " + avgMarks +"%");  
+            System.out.printf("|%-23s%-24s|\n", "Total: " + totalMarks, "Avg: " + avgMarks +"%");
+            System.out.println("+" + "-".repeat(15) + "+" + "-".repeat(15) + "+" + "-".repeat(15) + "+");
+            System.out.printf("|%4$s0;1m%-15s%4$s0m|%4$s0;1m%-15s%4$s0m|%4$s0;1m%-15s%4$s0m|\n", "Subject", "Marks", "Status", color);
+            System.out.println("+" + "-".repeat(15) + "+" + "-".repeat(15) + "+" + "-".repeat(15) + "+");
+            System.out.printf("|%6$s31m%-3s%03d%s%6$s0m|%6$s31m%-15f%6$s0m|%-26s|\n", "SE-", Integer.parseInt(sub1.substring(3))," ".repeat(9), marks1, statusSub1, color);
+            System.out.printf("|%6$s31m%-3s%03d%s%6$s0m|%6$s31m%-15f%6$s0m|%-26s|\n", "SE-", Integer.parseInt(sub2.substring(3))," ".repeat(9), marks2, statusSub2, color);
+            System.out.printf("|%6$s31m%-3s%03d%s%6$s0m|%6$s31m%-15f%6$s0m|%-26s|\n", "SE-", Integer.parseInt(sub3.substring(3))," ".repeat(9), marks3, statusSub3, color);
+            System.out.println("+" + "-".repeat(15) + "+" + "-".repeat(15) + "+" + "-".repeat(15) + "+");
+
+
+
                        
                 
         }
